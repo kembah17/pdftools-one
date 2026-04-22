@@ -264,7 +264,7 @@ export default function CompressPdfTool() {
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-            <div className="text-center p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+            <div className="text-center p-4 rounded-lg bg-surface-alt dark:bg-surface-dark-alt">
               <p className="text-sm text-text-light dark:text-text-dark-muted">Original</p>
               <p className="text-2xl font-bold text-text dark:text-text-dark">
                 {formatFileSize(result.originalSize)}
@@ -277,8 +277,8 @@ export default function CompressPdfTool() {
               </p>
             </div>
             <div className="text-center p-4 rounded-lg bg-blue-50 dark:bg-blue-900/20">
-              <p className="text-sm text-blue-600 dark:text-blue-400">Savings</p>
-              <p className="text-2xl font-bold text-blue-700 dark:text-blue-300">
+              <p className="text-sm text-primary-light dark:text-secondary">Savings</p>
+              <p className="text-2xl font-bold text-primary dark:text-secondary">
                 {savingsPercent > 0 ? `${savingsPercent}%` : "Minimal"}
               </p>
             </div>
@@ -288,13 +288,13 @@ export default function CompressPdfTool() {
           <div className="mb-6 space-y-2">
             <div className="flex items-center gap-3">
               <span className="text-xs text-text-light dark:text-text-dark-muted w-20">Original</span>
-              <div className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-4">
-                <div className="bg-gray-400 dark:bg-gray-500 h-4 rounded-full" style={{ width: "100%" }} />
+              <div className="flex-1 bg-surface-alt dark:bg-surface-dark-alt rounded-full h-4">
+                <div className="bg-border dark:bg-surface-alt0 h-4 rounded-full" style={{ width: "100%" }} />
               </div>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-xs text-text-light dark:text-text-dark-muted w-20">Compressed</span>
-              <div className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-4">
+              <div className="flex-1 bg-surface-alt dark:bg-surface-dark-alt rounded-full h-4">
                 <div
                   className="bg-green-500 h-4 rounded-full transition-all duration-500"
                   style={{

@@ -311,7 +311,7 @@ export default function JpgToPdfTool() {
                 <span className="flex-shrink-0 w-8 h-8 rounded bg-primary/10 text-primary flex items-center justify-center text-sm font-bold">
                   {idx + 1}
                 </span>
-                <div className="flex-shrink-0 w-12 h-12 rounded overflow-hidden bg-gray-100 dark:bg-gray-700">
+                <div className="flex-shrink-0 w-12 h-12 rounded overflow-hidden bg-surface-alt dark:bg-surface-dark-alt">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={img.previewUrl}
@@ -331,7 +331,7 @@ export default function JpgToPdfTool() {
                   <button
                     onClick={() => moveImage(idx, -1)}
                     disabled={idx === 0 || isProcessing}
-                    className="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-30 transition-colors"
+                    className="p-1.5 rounded hover:bg-surface-alt dark:hover:bg-surface-dark-alt disabled:opacity-30 transition-colors"
                     aria-label="Move up"
                     title="Move up"
                   >
@@ -342,7 +342,7 @@ export default function JpgToPdfTool() {
                   <button
                     onClick={() => moveImage(idx, 1)}
                     disabled={idx === images.length - 1 || isProcessing}
-                    className="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-30 transition-colors"
+                    className="p-1.5 rounded hover:bg-surface-alt dark:hover:bg-surface-dark-alt disabled:opacity-30 transition-colors"
                     aria-label="Move down"
                     title="Move down"
                   >

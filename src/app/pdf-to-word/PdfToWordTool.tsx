@@ -212,7 +212,7 @@ export default function PdfToWordTool() {
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <span className="text-blue-600 text-lg">📄</span>
+                  <span className="text-primary-light text-lg">📄</span>
                 </div>
                 <div>
                   <p className="font-medium text-text dark:text-text-dark">{file.name}</p>
@@ -258,15 +258,15 @@ export default function PdfToWordTool() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-              <div className="bg-gray-50 rounded-lg p-3 text-center">
+              <div className="bg-surface-alt rounded-lg p-3 text-center">
                 <p className="text-sm text-text-light dark:text-text-dark-muted">Pages</p>
                 <p className="text-lg font-semibold text-text dark:text-text-dark">{result.pageCount}</p>
               </div>
-              <div className="bg-gray-50 rounded-lg p-3 text-center">
+              <div className="bg-surface-alt rounded-lg p-3 text-center">
                 <p className="text-sm text-text-light dark:text-text-dark-muted">Original Size</p>
                 <p className="text-lg font-semibold text-text dark:text-text-dark">{formatFileSize(file!.size)}</p>
               </div>
-              <div className="bg-gray-50 rounded-lg p-3 text-center">
+              <div className="bg-surface-alt rounded-lg p-3 text-center">
                 <p className="text-sm text-text-light dark:text-text-dark-muted">Word File Size</p>
                 <p className="text-lg font-semibold text-text dark:text-text-dark">{formatFileSize(result.blob.size)}</p>
               </div>
@@ -275,7 +275,7 @@ export default function PdfToWordTool() {
             {/* Text Preview */}
             <div className="mb-6">
               <h3 className="text-sm font-medium text-text dark:text-text-dark mb-2">Extracted Text Preview</h3>
-              <div className="bg-gray-50 rounded-lg p-4 max-h-48 overflow-y-auto">
+              <div className="bg-surface-alt rounded-lg p-4 max-h-48 overflow-y-auto">
                 <p className="text-sm text-text-light dark:text-text-dark-muted whitespace-pre-wrap font-mono">
                   {result.textPreview}
                 </p>

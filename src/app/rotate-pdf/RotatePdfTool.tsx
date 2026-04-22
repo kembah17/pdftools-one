@@ -287,7 +287,7 @@ export default function RotatePdfTool() {
                   <button
                     onClick={() => rotatePage(p.pageIndex, 90)}
                     disabled={isProcessing}
-                    className="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-30 transition-colors"
+                    className="p-1.5 rounded hover:bg-surface-alt dark:hover:bg-surface-dark-alt disabled:opacity-30 transition-colors"
                     aria-label={`Rotate page ${p.pageIndex + 1} 90 degrees clockwise`}
                     title="90° CW"
                   >
@@ -298,7 +298,7 @@ export default function RotatePdfTool() {
                   <button
                     onClick={() => rotatePage(p.pageIndex, 180)}
                     disabled={isProcessing}
-                    className="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-30 transition-colors"
+                    className="p-1.5 rounded hover:bg-surface-alt dark:hover:bg-surface-dark-alt disabled:opacity-30 transition-colors"
                     aria-label={`Rotate page ${p.pageIndex + 1} 180 degrees`}
                     title="180°"
                   >
@@ -309,7 +309,7 @@ export default function RotatePdfTool() {
                   <button
                     onClick={() => rotatePage(p.pageIndex, 270)}
                     disabled={isProcessing}
-                    className="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-30 transition-colors"
+                    className="p-1.5 rounded hover:bg-surface-alt dark:hover:bg-surface-dark-alt disabled:opacity-30 transition-colors"
                     aria-label={`Rotate page ${p.pageIndex + 1} 90 degrees counter-clockwise`}
                     title="90° CCW"
                   >

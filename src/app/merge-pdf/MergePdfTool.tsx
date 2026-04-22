@@ -208,7 +208,7 @@ export default function MergePdfTool() {
                   <button
                     onClick={() => moveFile(idx, -1)}
                     disabled={idx === 0 || isProcessing}
-                    className="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-30 transition-colors"
+                    className="p-1.5 rounded hover:bg-surface-alt dark:hover:bg-surface-dark-alt disabled:opacity-30 transition-colors"
                     aria-label="Move up"
                     title="Move up"
                   >
@@ -219,7 +219,7 @@ export default function MergePdfTool() {
                   <button
                     onClick={() => moveFile(idx, 1)}
                     disabled={idx === files.length - 1 || isProcessing}
-                    className="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-30 transition-colors"
+                    className="p-1.5 rounded hover:bg-surface-alt dark:hover:bg-surface-dark-alt disabled:opacity-30 transition-colors"
                     aria-label="Move down"
                     title="Move down"
                   >

@@ -318,7 +318,7 @@ export default function PdfToJpgTool() {
                 key={page.pageNumber}
                 className="rounded-lg border border-border dark:border-border-dark overflow-hidden bg-surface dark:bg-surface-dark"
               >
-                <div className="aspect-[3/4] relative bg-gray-100 dark:bg-gray-800">
+                <div className="aspect-[3/4] relative bg-surface-alt dark:bg-surface-dark-alt">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={page.url}

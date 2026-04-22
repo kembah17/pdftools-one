@@ -50,7 +50,7 @@ export function Header() {
               <button
                 onClick={toggleTheme}
                 className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 ${
-                  theme === "dark" ? "bg-secondary" : "bg-slate-300"
+                  theme === "dark" ? "bg-secondary" : "bg-border"
                 }`}
                 role="switch"
                 aria-checked={theme === "dark"}
@@ -74,7 +74,7 @@ export function Header() {
             <button
               onClick={toggleTheme}
               className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 ${
-                theme === "dark" ? "bg-secondary" : "bg-slate-300"
+                theme === "dark" ? "bg-secondary" : "bg-border"
               }`}
               role="switch"
               aria-checked={theme === "dark"}
