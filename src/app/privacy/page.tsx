@@ -1,80 +1,56 @@
 import type { Metadata } from 'next';
-import { AdSlot } from '@/components/ui/AdSlot';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — PDFTools.one',
-  description: 'Privacy policy for PDFTools.one. Learn how we protect your data. All PDF processing happens in your browser — your files are never uploaded.',
+  title: 'Privacy Policy',
+  description: 'PDFTools.one privacy policy. Your files never leave your browser. Learn how we protect your privacy.',
   alternates: { canonical: 'https://pdftools.one/privacy' },
-  openGraph: {
-    title: 'Privacy Policy — PDFTools.one',
-    description: 'Your privacy matters. All PDF processing happens in your browser.',
-    url: 'https://pdftools.one/privacy',
-  },
 };
 
 export default function PrivacyPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl md:text-4xl font-bold text-text mb-6">Privacy Policy</h1>
+    <div className="max-w-3xl mx-auto px-4 py-12">
+      <h1 className="text-3xl md:text-4xl font-extrabold mb-6" style={{ color: 'var(--color-text-heading)' }}>
+        Privacy Policy
+      </h1>
+      <p className="text-sm mb-8" style={{ color: 'var(--color-text-muted)' }}>Last updated: April 2026</p>
 
-      <AdSlot slot="leaderboard" />
-
-      <div className="bg-surface border border-border rounded-xl p-8 shadow-sm space-y-6">
-        <p className="text-text-light leading-relaxed">
-          Last updated: April 2026. Your privacy is critically important to us. This policy explains how PDFTools.one handles your data.
-        </p>
-
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">File Processing</h2>
-          <p className="text-text-light leading-relaxed">
-            All PDF and image processing on PDFTools.one happens entirely within your web browser. Your files are never uploaded to our servers or any third-party service. When you use any of our tools, the files are read into your browser's memory, processed using JavaScript, and the results are generated locally on your device. Once you close the browser tab, all file data is removed from memory.
+      <div className="space-y-8" style={{ color: 'var(--color-text-secondary)' }}>
+        <section className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-xl font-bold mb-3" style={{ color: 'var(--color-text-heading)' }}>The Short Version</h2>
+          <p className="text-lg font-medium" style={{ color: 'var(--color-brand)' }}>
+            Your files never leave your device. We do not collect, store, or transmit any documents you process on this site.
           </p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Data We Collect</h2>
-          <p className="text-text-light leading-relaxed">
-            We do not collect, store, or have access to any files you process using our tools. We may collect anonymous usage analytics (such as page views and tool usage counts) through third-party analytics services to help us improve our tools. This data does not include any personal information or file content.
-          </p>
+        <section className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-xl font-bold mb-3" style={{ color: 'var(--color-text-heading)' }}>File Processing</h2>
+          <p>All PDF tools on PDFTools.one process files entirely in your browser using client-side JavaScript. When you select a file, it is loaded into your browser&apos;s memory — it is never uploaded to our servers or any third-party service. When you close the browser tab, all file data is removed from memory.</p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Cookies</h2>
-          <p className="text-text-light leading-relaxed">
-            We use essential cookies to remember your preferences (such as dark/light mode). Third-party advertising partners may use cookies to serve relevant ads. You can control cookie settings through your browser preferences.
-          </p>
+        <section className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-xl font-bold mb-3" style={{ color: 'var(--color-text-heading)' }}>Cookies</h2>
+          <p>We use a single cookie to remember your theme preference (light or dark mode) and your cookie consent choice. We do not use tracking cookies. If you accept analytics cookies, we may use Google Analytics to understand how visitors use the site — this collects anonymous usage data only, never file contents.</p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Third-Party Services</h2>
-          <p className="text-text-light leading-relaxed">
-            We may use third-party services for analytics (such as Google Analytics) and advertising (such as Google AdSense). These services may collect anonymous data about your visit. We recommend reviewing their respective privacy policies for more information.
-          </p>
+        <section className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-xl font-bold mb-3" style={{ color: 'var(--color-text-heading)' }}>Advertising</h2>
+          <p>This site displays advertisements to support free access to all tools. Ad networks may use cookies to serve relevant ads. You can manage your ad preferences through your browser settings or the cookie consent banner.</p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Data Security</h2>
-          <p className="text-text-light leading-relaxed">
-            Since your files never leave your device, the risk of data breach through our service is effectively zero. We use HTTPS encryption for all website traffic to protect any data transmitted between your browser and our servers (such as loading the website itself).
-          </p>
+        <section className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-xl font-bold mb-3" style={{ color: 'var(--color-text-heading)' }}>Data We Collect</h2>
+          <ul className="space-y-2 mt-2">
+            <li><strong style={{ color: 'var(--color-text-heading)' }}>Files:</strong> None. Zero. Your documents are never transmitted.</li>
+            <li><strong style={{ color: 'var(--color-text-heading)' }}>Personal Information:</strong> We do not require accounts, emails, or any personal data.</li>
+            <li><strong style={{ color: 'var(--color-text-heading)' }}>Analytics:</strong> Anonymous page views and tool usage statistics only (if you consent).</li>
+          </ul>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Changes to This Policy</h2>
-          <p className="text-text-light leading-relaxed">
-            We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. Your continued use of PDFTools.one after any changes constitutes acceptance of the updated policy.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Contact</h2>
-          <p className="text-text-light leading-relaxed">
-            If you have questions about this privacy policy, please contact us at <a href="mailto:hello@pdftools.one" className="text-primary hover:underline">hello@pdftools.one</a>.
-          </p>
+        <section className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-xl font-bold mb-3" style={{ color: 'var(--color-text-heading)' }}>Contact</h2>
+          <p>For privacy-related questions, contact us at <a href="mailto:hello@pdftools.one" style={{ color: 'var(--color-brand)' }}>hello@pdftools.one</a>.</p>
         </section>
       </div>
-
-      <AdSlot slot="footer" />
     </div>
   );
 }

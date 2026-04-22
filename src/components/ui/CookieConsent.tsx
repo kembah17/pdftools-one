@@ -7,9 +7,7 @@ export default function CookieConsent() {
 
   useEffect(() => {
     const consent = localStorage.getItem('cookie-consent');
-    if (!consent) {
-      setVisible(true);
-    }
+    if (!consent) setVisible(true);
   }, []);
 
   const accept = () => {
@@ -17,20 +15,38 @@ export default function CookieConsent() {
     setVisible(false);
   };
 
+  const decline = () => {
+    localStorage.setItem('cookie-consent', 'declined');
+    setVisible(false);
+  };
+
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4">
-      <div className="max-w-4xl mx-auto bg-surface border border-border rounded-xl shadow-lg p-4 flex flex-col sm:flex-row items-center gap-4">
-        <p className="text-sm text-text-light flex-1">
-          We use cookies for analytics and to remember your preferences. All PDF processing happens in your browser — your files are never uploaded.
+    <div
+      className="fixed bottom-0 left-0 right-0 z-50 p-4"
+      style={{ backgroundColor: 'var(--color-bg-card)', borderTop: '1px solid var(--color-border)', boxShadow: 'var(--shadow-lg)' }}
+    >
+      <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-4">
+        <p className="text-sm flex-1" style={{ color: 'var(--color-text-secondary)' }}>
+          We use cookies to improve your experience. No personal data is collected — all PDF processing happens in your browser.
         </p>
-        <button
-          onClick={accept}
-          className="px-5 py-2 bg-primary text-surface text-sm font-medium rounded-lg hover:bg-primary-hover transition-colors whitespace-nowrap"
-        >
-          Got it
-        </button>
+        <div className="flex gap-3">
+          <button
+            onClick={decline}
+            className="px-4 py-2 rounded-lg text-sm font-medium cursor-pointer"
+            style={{ color: 'var(--color-text-tertiary)', backgroundColor: 'transparent', border: '1px solid var(--color-border)' }}
+          >
+            Decline
+          </button>
+          <button
+            onClick={accept}
+            className="px-4 py-2 rounded-lg text-sm font-medium cursor-pointer"
+            style={{ backgroundColor: 'var(--color-brand)', color: '#FFFFFF', border: 'none' }}
+          >
+            Accept
+          </button>
+        </div>
       </div>
     </div>
   );

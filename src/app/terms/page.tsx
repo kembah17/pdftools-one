@@ -1,87 +1,55 @@
 import type { Metadata } from 'next';
-import { AdSlot } from '@/components/ui/AdSlot';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — PDFTools.one',
-  description: 'Terms of service for PDFTools.one. Read our terms and conditions for using our free online PDF tools.',
+  title: 'Terms of Service',
+  description: 'PDFTools.one terms of service. Free PDF tools provided as-is with no warranties.',
   alternates: { canonical: 'https://pdftools.one/terms' },
-  openGraph: {
-    title: 'Terms of Service — PDFTools.one',
-    description: 'Terms and conditions for using PDFTools.one free online PDF tools.',
-    url: 'https://pdftools.one/terms',
-  },
 };
 
 export default function TermsPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl md:text-4xl font-bold text-text mb-6">Terms of Service</h1>
+    <div className="max-w-3xl mx-auto px-4 py-12">
+      <h1 className="text-3xl md:text-4xl font-extrabold mb-6" style={{ color: 'var(--color-text-heading)' }}>
+        Terms of Service
+      </h1>
+      <p className="text-sm mb-8" style={{ color: 'var(--color-text-muted)' }}>Last updated: April 2026</p>
 
-      <AdSlot slot="leaderboard" />
-
-      <div className="bg-surface border border-border rounded-xl p-8 shadow-sm space-y-6">
-        <p className="text-text-light leading-relaxed">
-          Last updated: April 2026. By using PDFTools.one, you agree to these terms of service.
-        </p>
-
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Service Description</h2>
-          <p className="text-text-light leading-relaxed">
-            PDFTools.one provides free, browser-based PDF manipulation tools. All file processing occurs entirely within your web browser. We do not store, transmit, or have access to any files you process using our tools.
-          </p>
+      <div className="space-y-8" style={{ color: 'var(--color-text-secondary)' }}>
+        <section className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-xl font-bold mb-3" style={{ color: 'var(--color-text-heading)' }}>Acceptance of Terms</h2>
+          <p>By accessing and using PDFTools.one, you agree to these Terms of Service. If you do not agree, please do not use the site.</p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Acceptable Use</h2>
-          <p className="text-text-light leading-relaxed">
-            You may use PDFTools.one for any lawful purpose. You agree not to use our tools to process files that violate any applicable laws or regulations. You are solely responsible for the content of the files you process.
-          </p>
+        <section className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-xl font-bold mb-3" style={{ color: 'var(--color-text-heading)' }}>Service Description</h2>
+          <p>PDFTools.one provides free, browser-based PDF manipulation tools. All file processing occurs client-side in your browser. We do not store, transmit, or have access to any files you process.</p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">No Warranty</h2>
-          <p className="text-text-light leading-relaxed">
-            PDFTools.one is provided "as is" without warranties of any kind, either express or implied. We do not guarantee that our tools will be error-free, uninterrupted, or that the results will meet your specific requirements. We recommend keeping backup copies of your original files before processing.
-          </p>
+        <section className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-xl font-bold mb-3" style={{ color: 'var(--color-text-heading)' }}>Use of Service</h2>
+          <p>You may use our tools for any lawful purpose. You are responsible for ensuring you have the right to modify any documents you process. Do not use the service to process illegal content or to circumvent document security measures.</p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Limitation of Liability</h2>
-          <p className="text-text-light leading-relaxed">
-            To the maximum extent permitted by law, PDFTools.one and its operators shall not be liable for any direct, indirect, incidental, special, or consequential damages arising from your use of our tools. Since all processing happens in your browser, we have no control over or responsibility for the results produced.
-          </p>
+        <section className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-xl font-bold mb-3" style={{ color: 'var(--color-text-heading)' }}>Disclaimer of Warranties</h2>
+          <p>The service is provided &quot;as is&quot; without warranties of any kind. While we strive for accuracy and reliability, we cannot guarantee that the tools will work perfectly for every file or use case. Complex PDFs with unusual formatting may not process as expected.</p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Intellectual Property</h2>
-          <p className="text-text-light leading-relaxed">
-            The PDFTools.one website, including its design, code, and content, is protected by copyright. You retain all rights to the files you process using our tools. We claim no ownership or rights over your documents.
-          </p>
+        <section className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-xl font-bold mb-3" style={{ color: 'var(--color-text-heading)' }}>Limitation of Liability</h2>
+          <p>PDFTools.one shall not be liable for any damages arising from the use or inability to use the service. Always keep backup copies of important documents before processing them with any tool.</p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Advertising</h2>
-          <p className="text-text-light leading-relaxed">
-            PDFTools.one may display advertisements to support the free service. These ads are served by third-party advertising networks and are subject to their own terms and privacy policies.
-          </p>
+        <section className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-xl font-bold mb-3" style={{ color: 'var(--color-text-heading)' }}>Changes to Terms</h2>
+          <p>We may update these terms from time to time. Continued use of the site after changes constitutes acceptance of the updated terms.</p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Changes to Terms</h2>
-          <p className="text-text-light leading-relaxed">
-            We reserve the right to modify these terms at any time. Changes will be posted on this page with an updated revision date. Your continued use of PDFTools.one after any changes constitutes acceptance of the updated terms.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Contact</h2>
-          <p className="text-text-light leading-relaxed">
-            If you have questions about these terms, please contact us at <a href="mailto:hello@pdftools.one" className="text-primary hover:underline">hello@pdftools.one</a>.
-          </p>
+        <section className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-xl font-bold mb-3" style={{ color: 'var(--color-text-heading)' }}>Contact</h2>
+          <p>For questions about these terms, contact us at <a href="mailto:hello@pdftools.one" style={{ color: 'var(--color-brand)' }}>hello@pdftools.one</a>.</p>
         </section>
       </div>
-
-      <AdSlot slot="footer" />
     </div>
   );
 }

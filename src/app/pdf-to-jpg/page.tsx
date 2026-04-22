@@ -3,102 +3,69 @@ import PdfToJpgTool from './PdfToJpgTool';
 import { AdSlot } from '@/components/ui/AdSlot';
 import FAQ from '@/components/ui/FAQ';
 import FAQSchema from '@/components/seo/FAQSchema';
-import RelatedTools from '@/components/ui/RelatedTools';
+import { RelatedTools } from '@/components/ui/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'PDF to JPG Converter Online Free — Convert PDF Pages to Images',
-  description: 'Convert PDF pages to high-quality JPG images for free. Download individual images or all pages as a ZIP file. No upload required — all processing in your browser.',
+  description: 'Convert PDF pages to high-quality JPG images for free. Download individual pages or all pages at once. No upload — processing happens in your browser.',
   alternates: { canonical: 'https://pdftools.one/pdf-to-jpg' },
   openGraph: {
     title: 'PDF to JPG Converter Online Free — Convert PDF Pages to Images',
-    description: 'Convert PDF pages to high-quality JPG images. Free, private, no sign-up required.',
+    description: 'Convert PDF pages to high-quality JPG images for free. Download individual pages or all pages at once. No upload — processing happens in your browser.',
     url: 'https://pdftools.one/pdf-to-jpg',
   },
 };
 
 const faqs = [
-  {
-    question: 'How do I convert a PDF to JPG images?',
-    answer: 'Upload your PDF file, select the image quality and resolution, then click convert. Each page of your PDF is rendered as a separate JPG image. You can download individual images or all pages as a ZIP file.',
-  },
-  {
-    question: 'What image quality can I expect?',
-    answer: 'Our converter renders PDF pages at configurable resolutions. Higher DPI settings produce sharper images suitable for printing, while lower settings create smaller files ideal for web use or email.',
-  },
-  {
-    question: 'Can I convert specific pages instead of the entire PDF?',
-    answer: 'Yes. After uploading your PDF, you can select which pages to convert. This is useful when you only need images of certain pages rather than the entire document.',
-  },
-  {
-    question: 'Are my PDF files uploaded to a server?',
-    answer: 'No. The entire conversion process happens in your browser using JavaScript and the HTML5 Canvas API. Your PDF files never leave your device.',
-  },
-  {
-    question: 'Can I convert a large PDF with many pages?',
-    answer: 'Yes. The tool handles PDFs with many pages. For very large documents, pages are processed sequentially to manage memory efficiently. The practical limit depends on your device\'s capabilities.',
-  },
+  { question: 'How do I convert a PDF to JPG images?', answer: 'Upload your PDF file, and the tool automatically converts each page into a separate JPG image. You can download individual pages or all images at once as a ZIP file.' },
+  { question: 'What quality are the JPG images?', answer: 'The tool converts at high resolution by default, producing clear, sharp images suitable for printing and presentations. You can adjust the quality setting if needed.' },
+  { question: 'Can I convert a specific page instead of the whole PDF?', answer: 'Yes. After uploading, you can select which pages to convert rather than processing the entire document.' },
+  { question: 'Is there a page limit for conversion?', answer: 'No hard limit. Since conversion happens in your browser, the practical limit depends on your device memory. Most devices handle PDFs with hundreds of pages.' },
+  { question: 'Are my files private during conversion?', answer: 'Absolutely. Your PDF is processed entirely in your browser. No files are uploaded to any server. The conversion uses JavaScript running on your device.' }
 ];
 
 export default function PdfToJpgPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <FAQSchema faqs={faqs} />
+      <AdSlot slot="tool-leaderboard" />
 
-      <h1 className="text-3xl md:text-4xl font-bold text-text mb-3">PDF to JPG Converter</h1>
-      <p className="text-text-light mb-8">Convert PDF pages to high-quality JPG images. Download individually or as a ZIP archive. Free, private, and works entirely in your browser.</p>
+      <div className="mb-8">
+        <h1 className="text-3xl md:text-4xl font-extrabold mb-3" style={{ color: 'var(--color-text-heading)' }}>Convert PDF to JPG</h1>
+        <p className="text-lg" style={{ color: 'var(--color-text-secondary)' }}>Convert each page of your PDF into a high-quality JPG image. Perfect for presentations, social media, and thumbnails — all processed locally.</p>
+      </div>
 
-      <AdSlot slot="leaderboard" />
-
-      <div className="bg-surface border border-border rounded-xl p-6 shadow-sm">
+      <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)', boxShadow: 'var(--shadow-sm)' }}>
         <PdfToJpgTool />
       </div>
 
-      <AdSlot slot="below-results" />
+      <AdSlot slot="tool-below-results" />
 
-      <section className="mt-12 prose prose-lg max-w-none">
-        <h2 className="text-2xl font-bold text-text mb-4">How to Convert PDF to JPG Online</h2>
-        <div className="text-text-light space-y-4 leading-relaxed">
-          <p>
-            Converting PDF pages to JPG images is essential for many workflows — from creating social media posts from document pages to embedding PDF content in presentations, websites, or emails. Our free online converter transforms each PDF page into a crisp, high-quality JPG image without requiring any software installation.
-          </p>
-          <h3 className="text-xl font-semibold text-text mt-6 mb-2">Step-by-Step Instructions</h3>
-          <p>
-            <strong>Step 1: Upload Your PDF.</strong> Drag and drop your PDF file into the upload area or click to browse. The tool loads the document and displays a preview of all pages so you can see what will be converted.
-          </p>
-          <p>
-            <strong>Step 2: Configure Output Settings.</strong> Choose your preferred image quality and resolution. Higher DPI values (200-300) produce sharper images suitable for printing, while lower values (72-150) create smaller files perfect for screen viewing, web use, or email attachments.
-          </p>
-          <p>
-            <strong>Step 3: Convert and Download.</strong> Click the convert button to start processing. Each page is rendered to a high-quality JPG image using the HTML5 Canvas API. Download individual images by clicking on them, or download all pages at once as a convenient ZIP archive.
-          </p>
-          <h3 className="text-xl font-semibold text-text mt-6 mb-2">How the Conversion Works</h3>
-          <p>
-            Our tool uses PDF.js, the same rendering engine used by Firefox to display PDFs. Each page is rendered onto an HTML5 Canvas element at your chosen resolution, then exported as a JPG image. This approach produces accurate, high-fidelity images that faithfully reproduce the original PDF content including text, graphics, photos, and complex layouts.
-          </p>
-          <h3 className="text-xl font-semibold text-text mt-6 mb-2">Common Use Cases</h3>
-          <p>
-            <strong>Social media:</strong> Convert PDF infographics, flyers, or brochures to JPG for sharing on Instagram, Facebook, or Twitter. <strong>Presentations:</strong> Insert PDF pages as images in PowerPoint or Google Slides. <strong>Web content:</strong> Convert PDF charts, diagrams, or pages for use on websites and blogs.
-          </p>
-          <p>
-            <strong>Email:</strong> Embed PDF content directly in emails as inline images instead of attachments. <strong>Documentation:</strong> Create image versions of PDF pages for inclusion in Word documents or wikis. <strong>Archiving:</strong> Convert important PDF pages to images for easy browsing and organization.
-          </p>
-          <h3 className="text-xl font-semibold text-text mt-6 mb-2">Tips for Best Results</h3>
-          <p>
-            For documents with small text, use a higher DPI setting (200 or above) to ensure readability. For photos and graphics, 150 DPI usually provides excellent quality with reasonable file sizes. If you need transparent backgrounds, consider using our PDF to PNG conversion option instead, as JPG does not support transparency.
-          </p>
+      <section className="mt-12 rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+        <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--color-text-heading)' }}>How to Convert PDF to JPG Online</h2>
+        <div className="space-y-4 text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+          <p>Converting PDFs to JPG images is useful for many purposes: creating thumbnails for document previews, sharing individual pages on social media, embedding PDF content in presentations, or extracting images from scanned documents.</p>
+          <h3 className="text-xl font-semibold mt-6 mb-2" style={{ color: 'var(--color-text-heading)' }}>Step-by-Step Instructions</h3>
+          <p><strong style={{ color: 'var(--color-text-heading)' }}>Step 1: Upload Your PDF.</strong> Drag and drop your PDF or click to browse. The tool loads and previews all pages.</p>
+          <p><strong style={{ color: 'var(--color-text-heading)' }}>Step 2: Configure Settings.</strong> Choose the output quality and resolution. Higher settings produce larger, sharper images. Select specific pages if you do not need the entire document.</p>
+          <p><strong style={{ color: 'var(--color-text-heading)' }}>Step 3: Convert and Download.</strong> Click "Convert to JPG" to process. Download individual images or get all pages as a ZIP archive.</p>
+          <h3 className="text-xl font-semibold mt-6 mb-2" style={{ color: 'var(--color-text-heading)' }}>When to Use PDF to JPG</h3>
+          <p>Use this tool when you need to share PDF content on platforms that do not support PDF files, when creating image-based presentations, or when you need to edit individual pages in an image editor. The JPG format is universally supported across all devices and platforms.</p>
         </div>
       </section>
 
-      <AdSlot slot="in-content" />
+      <AdSlot slot="tool-in-content" />
 
       <section className="mt-12">
-        <h2 className="text-2xl font-bold text-text mb-6">Frequently Asked Questions</h2>
+        <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--color-text-heading)' }}>Frequently Asked Questions</h2>
         <FAQ items={faqs} />
       </section>
 
-      <RelatedTools currentTool="/pdf-to-jpg" />
+      <section className="mt-12">
+        <RelatedTools currentTool="/pdf-to-jpg" />
+      </section>
 
-      <AdSlot slot="footer" />
+      <AdSlot slot="tool-footer" />
     </div>
   );
 }

@@ -3,105 +3,69 @@ import CompressPdfTool from './CompressPdfTool';
 import { AdSlot } from '@/components/ui/AdSlot';
 import FAQ from '@/components/ui/FAQ';
 import FAQSchema from '@/components/seo/FAQSchema';
-import RelatedTools from '@/components/ui/RelatedTools';
+import { RelatedTools } from '@/components/ui/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Compress PDF Online Free — Reduce PDF File Size',
-  description: 'Compress PDF files to reduce file size while maintaining quality. Free online PDF compressor — no upload required, all processing in your browser.',
+  description: 'Compress PDF files to reduce size by up to 70% while maintaining quality. Free, private, no upload required — all processing in your browser.',
   alternates: { canonical: 'https://pdftools.one/compress-pdf' },
   openGraph: {
     title: 'Compress PDF Online Free — Reduce PDF File Size',
-    description: 'Reduce PDF file size while maintaining quality. Free, private, no sign-up required.',
+    description: 'Compress PDF files to reduce size by up to 70% while maintaining quality. Free, private, no upload required — all processing in your browser.',
     url: 'https://pdftools.one/compress-pdf',
   },
 };
 
 const faqs = [
-  {
-    question: 'How does PDF compression work?',
-    answer: 'Our tool compresses PDFs by optimizing images within the document, removing redundant data, and streamlining the file structure. The compression happens entirely in your browser using JavaScript.',
-  },
-  {
-    question: 'Will compression reduce the quality of my PDF?',
-    answer: 'The tool offers different compression levels. Light compression maintains near-original quality with modest size reduction. Higher compression levels reduce file size more aggressively but may slightly reduce image quality. Text and vector graphics remain sharp at all levels.',
-  },
-  {
-    question: 'How much can I reduce my PDF file size?',
-    answer: 'Results vary depending on the content. PDFs with many high-resolution images can often be reduced by 50-80%. Text-heavy PDFs with few images may see smaller reductions of 10-30%.',
-  },
-  {
-    question: 'Is there a file size limit?',
-    answer: 'There is no server-imposed limit since processing happens in your browser. The practical limit depends on your device\'s memory. Most devices handle PDFs up to 100MB without issues.',
-  },
-  {
-    question: 'Are my files safe during compression?',
-    answer: 'Yes. Your PDF files are processed entirely in your browser and never uploaded to any server. The compressed file is generated locally and downloaded directly to your device.',
-  },
+  { question: 'How much can I reduce my PDF file size?', answer: 'Compression results vary depending on the content. PDFs with many images typically see 40-70% size reduction. Text-heavy PDFs with few images may see 10-30% reduction.' },
+  { question: 'Does compression reduce the quality of my PDF?', answer: 'Our tool uses smart compression that prioritizes visual quality. Text remains crisp and sharp. Images are compressed using optimized algorithms that minimize visible quality loss.' },
+  { question: 'What is the maximum file size I can compress?', answer: 'Since processing happens in your browser, the limit depends on your device. Most modern devices handle PDFs up to 50-100MB comfortably.' },
+  { question: 'Can I compress password-protected PDFs?', answer: 'The tool can process PDFs that are not encrypted. If your PDF requires a password to open, you will need to remove the protection first.' },
+  { question: 'Is my PDF safe during compression?', answer: 'Yes. Your file never leaves your device. All compression happens locally in your browser. No data is sent to any server, and closing the tab removes all traces.' }
 ];
 
 export default function CompressPdfPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <FAQSchema faqs={faqs} />
+      <AdSlot slot="tool-leaderboard" />
 
-      <h1 className="text-3xl md:text-4xl font-bold text-text mb-3">Compress PDF</h1>
-      <p className="text-text-light mb-8">Reduce PDF file size while maintaining quality. Perfect for email attachments and faster sharing. Free, private, and works entirely in your browser.</p>
+      <div className="mb-8">
+        <h1 className="text-3xl md:text-4xl font-extrabold mb-3" style={{ color: 'var(--color-text-heading)' }}>Compress PDF Files</h1>
+        <p className="text-lg" style={{ color: 'var(--color-text-secondary)' }}>Reduce PDF file size by up to 70% while maintaining visual quality. Perfect for email attachments and uploads — all processing happens locally.</p>
+      </div>
 
-      <AdSlot slot="leaderboard" />
-
-      <div className="bg-surface border border-border rounded-xl p-6 shadow-sm">
+      <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)', boxShadow: 'var(--shadow-sm)' }}>
         <CompressPdfTool />
       </div>
 
-      <AdSlot slot="below-results" />
+      <AdSlot slot="tool-below-results" />
 
-      <section className="mt-12 prose prose-lg max-w-none">
-        <h2 className="text-2xl font-bold text-text mb-4">How to Compress PDF Files Online</h2>
-        <div className="text-text-light space-y-4 leading-relaxed">
-          <p>
-            Large PDF files can be a headache — they clog email inboxes, slow down file sharing, and eat up storage space. Our free online PDF compressor solves this by reducing file size while preserving the quality you need. Best of all, your files never leave your device.
-          </p>
-          <h3 className="text-xl font-semibold text-text mt-6 mb-2">Step-by-Step Instructions</h3>
-          <p>
-            <strong>Step 1: Upload Your PDF.</strong> Drag and drop your PDF file into the upload area or click to browse your files. The tool accepts any standard PDF file regardless of size.
-          </p>
-          <p>
-            <strong>Step 2: Choose Compression Level.</strong> Select your preferred compression level. Light compression preserves maximum quality with moderate size reduction. Medium compression offers a good balance between quality and file size. Heavy compression maximizes size reduction for the smallest possible file.
-          </p>
-          <p>
-            <strong>Step 3: Compress and Download.</strong> Click the compress button to start processing. The tool analyzes your PDF, optimizes images, and removes unnecessary data. Once complete, you will see the original and compressed file sizes along with the percentage reduction. Download your compressed PDF with one click.
-          </p>
-          <h3 className="text-xl font-semibold text-text mt-6 mb-2">How Compression Works</h3>
-          <p>
-            PDF compression primarily targets embedded images, which are usually the largest components of a PDF file. The tool re-encodes images at optimized quality settings, converts high-resolution images to appropriate dimensions, and removes duplicate image data. It also strips unnecessary metadata, removes unused fonts, and optimizes the internal PDF structure.
-          </p>
-          <p>
-            Text content and vector graphics (like logos and diagrams) are not affected by compression and remain perfectly sharp at any zoom level. Only raster images (photographs, scanned pages) are optimized.
-          </p>
-          <h3 className="text-xl font-semibold text-text mt-6 mb-2">When to Compress PDFs</h3>
-          <p>
-            <strong>Email attachments:</strong> Most email providers limit attachment sizes to 10-25MB. Compressing a large PDF ensures it fits within these limits. <strong>Web uploads:</strong> Many online forms and portals have file size restrictions. <strong>Storage optimization:</strong> Reduce the space consumed by PDF archives on your device or cloud storage.
-          </p>
-          <p>
-            <strong>Faster sharing:</strong> Smaller files upload and download faster, especially on slower internet connections. <strong>Mobile devices:</strong> Compressed PDFs load faster and use less memory on phones and tablets.
-          </p>
-          <h3 className="text-xl font-semibold text-text mt-6 mb-2">Tips for Best Results</h3>
-          <p>
-            Start with light compression and check if the result meets your needs. If the file is still too large, try medium or heavy compression. For documents that will be printed, use light compression to maintain image quality. For screen-only viewing, medium or heavy compression is usually sufficient.
-          </p>
+      <section className="mt-12 rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+        <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--color-text-heading)' }}>How to Compress PDF Files Online</h2>
+        <div className="space-y-4 text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+          <p>Large PDF files can be problematic — email services reject attachments over 25MB, upload forms have size limits, and large files are slow to share. Our free PDF compressor solves this by reducing file size while keeping your documents looking professional.</p>
+          <h3 className="text-xl font-semibold mt-6 mb-2" style={{ color: 'var(--color-text-heading)' }}>Step-by-Step Instructions</h3>
+          <p><strong style={{ color: 'var(--color-text-heading)' }}>Step 1: Upload Your PDF.</strong> Drag and drop your PDF file or click to browse. The tool displays the original file size immediately.</p>
+          <p><strong style={{ color: 'var(--color-text-heading)' }}>Step 2: Choose Compression Level.</strong> Select your preferred balance between file size and quality. Higher compression means smaller files but slightly lower image quality.</p>
+          <p><strong style={{ color: 'var(--color-text-heading)' }}>Step 3: Compress and Download.</strong> Click "Compress PDF" to process. The tool shows the new file size and compression ratio, then downloads the optimized file.</p>
+          <h3 className="text-xl font-semibold mt-6 mb-2" style={{ color: 'var(--color-text-heading)' }}>Tips for Best Results</h3>
+          <p>For documents you plan to print, use light compression to preserve maximum quality. For email attachments or web uploads, medium or high compression usually provides the best balance. Scanned documents with large images benefit most from compression.</p>
         </div>
       </section>
 
-      <AdSlot slot="in-content" />
+      <AdSlot slot="tool-in-content" />
 
       <section className="mt-12">
-        <h2 className="text-2xl font-bold text-text mb-6">Frequently Asked Questions</h2>
+        <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--color-text-heading)' }}>Frequently Asked Questions</h2>
         <FAQ items={faqs} />
       </section>
 
-      <RelatedTools currentTool="/compress-pdf" />
+      <section className="mt-12">
+        <RelatedTools currentTool="/compress-pdf" />
+      </section>
 
-      <AdSlot slot="footer" />
+      <AdSlot slot="tool-footer" />
     </div>
   );
 }

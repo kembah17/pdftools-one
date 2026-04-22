@@ -4,7 +4,7 @@ export default function WebSiteSchema() {
     '@type': 'WebSite',
     name: 'PDFTools.one',
     url: 'https://pdftools.one',
-    description: 'Free online PDF tools. Merge, split, compress, convert, and rotate PDFs entirely in your browser.',
+    description: 'Free online PDF tools that work entirely in your browser. Merge, split, compress, convert, and rotate PDFs with complete privacy.',
     potentialAction: {
       '@type': 'SearchAction',
       target: 'https://pdftools.one/?q={search_term_string}',

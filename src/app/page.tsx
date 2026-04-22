@@ -1,144 +1,98 @@
-import Link from 'next/link';
+import HomeToolGrid from '@/components/ui/HomeToolGrid';
 import { AdSlot } from '@/components/ui/AdSlot';
 import WebSiteSchema from '@/components/seo/WebSiteSchema';
-import { PrivacyBadge } from '@/components/ui/PrivacyBadge';
-
-const tools = [
-  {
-    name: 'Merge PDF',
-    href: '/merge-pdf',
-    description: 'Combine multiple PDF files into a single document. Drag and drop to reorder pages.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
-      </svg>
-    ),
-  },
-  {
-    name: 'Split PDF',
-    href: '/split-pdf',
-    description: 'Extract specific pages or split a PDF into multiple separate files.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
-      </svg>
-    ),
-  },
-  {
-    name: 'Compress PDF',
-    href: '/compress-pdf',
-    description: 'Reduce PDF file size while maintaining quality. Perfect for email attachments.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-      </svg>
-    ),
-  },
-  {
-    name: 'PDF to JPG',
-    href: '/pdf-to-jpg',
-    description: 'Convert PDF pages to high-quality JPG images. Download individually or as ZIP.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-      </svg>
-    ),
-  },
-  {
-    name: 'JPG to PDF',
-    href: '/jpg-to-pdf',
-    description: 'Convert JPG images into a PDF document. Supports multiple images with reordering.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-      </svg>
-    ),
-  },
-  {
-    name: 'PDF to Word',
-    href: '/pdf-to-word',
-    description: 'Convert PDF documents to editable Word (.docx) format with text extraction.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-      </svg>
-    ),
-  },
-  {
-    name: 'Rotate PDF',
-    href: '/rotate-pdf',
-    description: 'Rotate PDF pages to any orientation. Rotate individual pages or all at once.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-      </svg>
-    ),
-  },
-];
-
-const steps = [
-  { step: '1', title: 'Upload Your PDF', description: 'Drag and drop your PDF file or click to browse. Files stay in your browser.' },
-  { step: '2', title: 'Choose Your Action', description: 'Select from merge, split, compress, convert, or rotate tools.' },
-  { step: '3', title: 'Download Result', description: 'Get your processed file instantly. No email required, no waiting.' },
-];
 
 export default function HomePage() {
   return (
     <>
       <WebSiteSchema />
 
-      {/* Hero Section */}
-      <section className="bg-surface border-b border-border">
-        <div className="max-w-6xl mx-auto px-4 py-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-text mb-4">
-            Free Online <span className="text-primary">PDF Tools</span>
+      {/* Hero */}
+      <section
+        className="py-16 md:py-24"
+        style={{ backgroundColor: 'var(--color-bg-hero)' }}
+      >
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6" style={{ color: 'var(--color-text-heading)' }}>
+            Free Online{' '}
+            <span style={{ color: 'var(--color-brand)' }}>PDF Tools</span>
           </h1>
-          <p className="text-lg text-text-light max-w-2xl mx-auto mb-8">
-            Merge, split, compress, convert, and rotate PDFs entirely in your browser.
-            No uploads, no sign-ups, no limits — your files never leave your device.
+          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8" style={{ color: 'var(--color-text-secondary)' }}>
+            Merge, split, compress, convert, and rotate PDF files — all for free, directly in your browser. Your files never leave your device.
           </p>
-          <PrivacyBadge />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#tools"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-xl text-base font-semibold no-underline transition-all"
+              style={{ backgroundColor: 'var(--color-brand)', color: '#FFFFFF' }}
+            >
+              Explore Tools
+            </a>
+            <a
+              href="/about"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-xl text-base font-semibold no-underline transition-all"
+              style={{
+                backgroundColor: 'transparent',
+                color: 'var(--color-brand)',
+                border: '2px solid var(--color-brand)',
+              }}
+            >
+              Learn More
+            </a>
+          </div>
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <AdSlot slot="leaderboard" />
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <AdSlot slot="home-leaderboard" />
 
         {/* Tools Grid */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold text-text mb-8 text-center">All PDF Tools</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {tools.map(tool => (
-              <Link
-                key={tool.href}
-                href={tool.href}
-                className="group block p-6 bg-surface border border-border rounded-xl shadow-sm hover:shadow-md hover:border-primary transition-all"
-              >
-                <div className="text-primary mb-3 group-hover:scale-110 transition-transform inline-block">
-                  {tool.icon}
-                </div>
-                <h3 className="font-semibold text-lg text-text mb-2 group-hover:text-primary transition-colors">
-                  {tool.name}
-                </h3>
-                <p className="text-sm text-text-light leading-relaxed">{tool.description}</p>
-              </Link>
-            ))}
+        <section id="tools" className="mb-16">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold mb-3" style={{ color: 'var(--color-text-heading)' }}>
+              All PDF Tools
+            </h2>
+            <p className="text-lg" style={{ color: 'var(--color-text-tertiary)' }}>
+              Select a tool below to get started — no sign-up required
+            </p>
           </div>
+          <HomeToolGrid />
         </section>
 
-        <AdSlot slot="in-content" />
+        <AdSlot slot="home-mid" />
 
         {/* How It Works */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-text mb-8 text-center">How It Works</h2>
+          <h2 className="text-3xl font-bold text-center mb-10" style={{ color: 'var(--color-text-heading)' }}>
+            How It Works
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {steps.map(item => (
-              <div key={item.step} className="text-center">
-                <div className="w-12 h-12 bg-primary text-surface rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+            {[
+              { step: '1', title: 'Choose a Tool', desc: 'Select the PDF tool you need from our collection of seven essential utilities.' },
+              { step: '2', title: 'Upload Your File', desc: 'Drag and drop your PDF or images. Files stay in your browser — nothing is uploaded.' },
+              { step: '3', title: 'Download Result', desc: 'Get your processed file instantly. Close the tab and all data is gone.' },
+            ].map((item) => (
+              <div
+                key={item.step}
+                className="text-center p-8 rounded-xl"
+                style={{
+                  backgroundColor: 'var(--color-bg-card)',
+                  border: '1px solid var(--color-border)',
+                  boxShadow: 'var(--shadow-sm)',
+                }}
+              >
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4"
+                  style={{ backgroundColor: 'var(--color-brand-lightest)', color: 'var(--color-brand)' }}
+                >
                   {item.step}
                 </div>
-                <h3 className="font-semibold text-text mb-2">{item.title}</h3>
-                <p className="text-sm text-text-light">{item.description}</p>
+                <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--color-text-heading)' }}>
+                  {item.title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-tertiary)' }}>
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -146,23 +100,85 @@ export default function HomePage() {
 
         {/* Why Choose Us */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-text mb-8 text-center">Why Choose PDFTools.one?</h2>
+          <h2 className="text-3xl font-bold text-center mb-10" style={{ color: 'var(--color-text-heading)' }}>
+            Why Choose PDFTools.one?
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { title: '100% Private', desc: 'Your files are processed entirely in your browser. Nothing is uploaded to any server.' },
-              { title: 'Completely Free', desc: 'All tools are free to use with no hidden fees, no sign-ups, and no file limits.' },
-              { title: 'Lightning Fast', desc: 'Client-side processing means instant results. No waiting for server uploads or downloads.' },
-              { title: 'Works Offline', desc: 'Once loaded, our tools work without an internet connection since all logic runs locally.' },
-            ].map(item => (
-              <div key={item.title} className="p-6 bg-surface border border-border rounded-xl shadow-sm">
-                <h3 className="font-semibold text-text mb-2">{item.title}</h3>
-                <p className="text-sm text-text-light">{item.desc}</p>
+              { icon: '🔒', title: '100% Private', desc: 'All processing happens in your browser. Your files are never uploaded to any server.' },
+              { icon: '⚡', title: 'Lightning Fast', desc: 'No waiting for server processing. Results are instant because everything runs locally.' },
+              { icon: '💰', title: 'Completely Free', desc: 'No hidden fees, no premium tiers, no sign-up required. Every tool is free forever.' },
+              { icon: '🌐', title: 'Works Everywhere', desc: 'Use on any device with a modern browser — desktop, tablet, or phone. No installation needed.' },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="p-6 rounded-xl flex gap-4"
+                style={{
+                  backgroundColor: 'var(--color-bg-card)',
+                  border: '1px solid var(--color-border)',
+                  boxShadow: 'var(--shadow-sm)',
+                }}
+              >
+                <span className="text-3xl shrink-0">{item.icon}</span>
+                <div>
+                  <h3 className="font-semibold mb-1" style={{ color: 'var(--color-text-heading)' }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-tertiary)' }}>
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </section>
 
-        <AdSlot slot="footer" />
+        <AdSlot slot="home-lower" />
+
+        {/* Rich SEO Content */}
+        <section
+          className="mb-16 rounded-xl p-8 md:p-12"
+          style={{
+            backgroundColor: 'var(--color-bg-card)',
+            border: '1px solid var(--color-border)',
+            boxShadow: 'var(--shadow-sm)',
+          }}
+        >
+          <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--color-text-heading)' }}>
+            The Complete Guide to Online PDF Tools
+          </h2>
+          <div className="space-y-4 text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+            <p>
+              PDF (Portable Document Format) is the universal standard for sharing documents. Whether you are a student, professional, or business owner, you likely work with PDFs daily. PDFTools.one provides seven essential tools to handle every common PDF task — completely free and with total privacy.
+            </p>
+            <p>
+              <strong style={{ color: 'var(--color-text-heading)' }}>Merge PDF</strong> lets you combine multiple PDF files into a single document. This is perfect for assembling reports, combining scanned pages, or creating portfolios. Simply drag and drop your files, reorder them as needed, and download the merged result.
+            </p>
+            <p>
+              <strong style={{ color: 'var(--color-text-heading)' }}>Split PDF</strong> extracts specific pages from a PDF or divides it into multiple files. Use it to pull out a single page from a long document, separate chapters, or create smaller files for easier sharing.
+            </p>
+            <p>
+              <strong style={{ color: 'var(--color-text-heading)' }}>Compress PDF</strong> reduces file size while maintaining visual quality. Large PDFs can be difficult to email or upload — our compressor typically reduces file size by 40-70% without noticeable quality loss.
+            </p>
+            <p>
+              <strong style={{ color: 'var(--color-text-heading)' }}>PDF to JPG</strong> converts each page of a PDF into a high-quality JPG image. This is useful for creating thumbnails, sharing individual pages on social media, or embedding PDF content in presentations.
+            </p>
+            <p>
+              <strong style={{ color: 'var(--color-text-heading)' }}>JPG to PDF</strong> converts images into PDF documents. Combine multiple photos into a single PDF for easy sharing, create photo albums, or convert scanned images into proper PDF documents.
+            </p>
+            <p>
+              <strong style={{ color: 'var(--color-text-heading)' }}>PDF to Word</strong> extracts text from PDFs and creates editable Word documents. While complex layouts may not convert perfectly, this tool is excellent for extracting text content from reports, articles, and simple documents.
+            </p>
+            <p>
+              <strong style={{ color: 'var(--color-text-heading)' }}>Rotate PDF</strong> changes the orientation of PDF pages. Fix sideways scans, rotate individual pages, or adjust the orientation of an entire document with a single click.
+            </p>
+            <p>
+              Every tool on PDFTools.one processes files entirely in your browser using JavaScript. This means your sensitive documents — contracts, financial records, medical files — never leave your computer. There is zero risk of data interception, and no account or sign-up is required.
+            </p>
+          </div>
+        </section>
+
+        <AdSlot slot="home-footer" />
       </div>
     </>
   );

@@ -1,68 +1,71 @@
 import type { Metadata } from 'next';
-import { AdSlot } from '@/components/ui/AdSlot';
 
 export const metadata: Metadata = {
-  title: 'About PDFTools.one — Free Online PDF Tools',
-  description: 'Learn about PDFTools.one, our mission to provide free, private, browser-based PDF tools. No uploads, no sign-ups, no limits.',
+  title: 'About PDFTools.one — Free Privacy-First PDF Tools',
+  description: 'Learn about PDFTools.one, our mission to provide free, private PDF tools that work entirely in your browser. No uploads, no accounts, no tracking.',
   alternates: { canonical: 'https://pdftools.one/about' },
-  openGraph: {
-    title: 'About PDFTools.one — Free Online PDF Tools',
-    description: 'Free, private, browser-based PDF tools. Learn about our mission and technology.',
-    url: 'https://pdftools.one/about',
-  },
 };
 
 export default function AboutPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl md:text-4xl font-bold text-text mb-6">About PDFTools.one</h1>
+    <div className="max-w-3xl mx-auto px-4 py-12">
+      <h1 className="text-3xl md:text-4xl font-extrabold mb-6" style={{ color: 'var(--color-text-heading)' }}>
+        About PDFTools.one
+      </h1>
 
-      <AdSlot slot="leaderboard" />
+      <div className="space-y-6 leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+        <p className="text-lg">
+          PDFTools.one provides free online PDF tools that work entirely in your browser. We believe working with PDFs should be simple, fast, and private — without requiring software installations, account sign-ups, or file uploads to remote servers.
+        </p>
 
-      <div className="bg-surface border border-border rounded-xl p-8 shadow-sm space-y-6">
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Our Mission</h2>
-          <p className="text-text-light leading-relaxed">
-            PDFTools.one was created with a simple mission: provide powerful PDF tools that are completely free, entirely private, and require no sign-up. We believe that basic document manipulation should be accessible to everyone without compromising privacy or requiring expensive software subscriptions.
+        <div className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--color-text-heading)' }}>Our Mission</h2>
+          <p>
+            Every day, millions of people need to merge, split, compress, or convert PDF files. Most online tools require uploading sensitive documents to unknown servers — creating privacy risks for personal, financial, and business documents.
           </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">How It Works</h2>
-          <p className="text-text-light leading-relaxed">
-            Every tool on PDFTools.one runs entirely in your web browser. When you upload a PDF file, it is processed using JavaScript libraries running on your device — nothing is ever sent to a server. This client-side approach means your documents remain completely private, processing is instant (no upload/download wait times), and the tools work even without an internet connection once the page has loaded.
+          <p className="mt-3">
+            We built PDFTools.one to eliminate that risk entirely. Every tool on this site processes files using JavaScript running in your browser. Your documents never leave your device, and closing the tab removes all traces.
           </p>
-        </section>
+        </div>
 
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Our Technology</h2>
-          <p className="text-text-light leading-relaxed">
-            We use industry-standard open-source libraries to ensure reliable, high-quality results. Our tools are built with pdf-lib for PDF manipulation, PDF.js (the same engine Firefox uses) for rendering, and modern web APIs like Canvas for image processing. The website itself is built with Next.js and React for a fast, responsive experience on any device.
+        <div className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--color-text-heading)' }}>How It Works</h2>
+          <p>
+            Our tools use modern JavaScript libraries like <strong style={{ color: 'var(--color-text-heading)' }}>pdf-lib</strong> and <strong style={{ color: 'var(--color-text-heading)' }}>PDF.js</strong> to manipulate PDF files directly in your browser. When you upload a file, it is loaded into your browser&apos;s memory — not transmitted over the internet.
           </p>
-        </section>
+          <p className="mt-3">
+            This approach has two major advantages: <strong style={{ color: 'var(--color-text-heading)' }}>complete privacy</strong> (your files stay on your device) and <strong style={{ color: 'var(--color-text-heading)' }}>instant processing</strong> (no waiting for server uploads and downloads).
+          </p>
+        </div>
 
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Available Tools</h2>
-          <ul className="list-disc list-inside text-text-light space-y-2">
-            <li><strong className="text-text">Merge PDF</strong> — Combine multiple PDF files into a single document</li>
-            <li><strong className="text-text">Split PDF</strong> — Extract specific pages or split into multiple files</li>
-            <li><strong className="text-text">Compress PDF</strong> — Reduce file size while maintaining quality</li>
-            <li><strong className="text-text">PDF to JPG</strong> — Convert PDF pages to high-quality images</li>
-            <li><strong className="text-text">JPG to PDF</strong> — Convert images into PDF documents</li>
-            <li><strong className="text-text">PDF to Word</strong> — Convert PDFs to editable Word format</li>
-            <li><strong className="text-text">Rotate PDF</strong> — Change page orientation with a single click</li>
+        <div className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--color-text-heading)' }}>Our Tools</h2>
+          <ul className="space-y-2 mt-3">
+            {[
+              ['Merge PDF', 'Combine multiple PDF files into a single document'],
+              ['Split PDF', 'Extract specific pages or divide PDFs into multiple files'],
+              ['Compress PDF', 'Reduce file size while maintaining visual quality'],
+              ['PDF to JPG', 'Convert PDF pages into high-quality JPG images'],
+              ['JPG to PDF', 'Convert images into PDF documents'],
+              ['PDF to Word', 'Extract text from PDFs into editable Word documents'],
+              ['Rotate PDF', 'Fix page orientation by rotating pages'],
+            ].map(([name, desc]) => (
+              <li key={name} className="flex gap-2">
+                <span style={{ color: 'var(--color-brand)' }}>•</span>
+                <span><strong style={{ color: 'var(--color-text-heading)' }}>{name}</strong> — {desc}</span>
+              </li>
+            ))}
           </ul>
-        </section>
+        </div>
 
-        <section>
-          <h2 className="text-xl font-semibold text-text mb-3">Contact</h2>
-          <p className="text-text-light leading-relaxed">
-            Have questions, feedback, or suggestions? We would love to hear from you. Reach out to us at <a href="mailto:hello@pdftools.one" className="text-primary hover:underline">hello@pdftools.one</a>.
+        <div className="rounded-xl p-8" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)' }}>
+          <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--color-text-heading)' }}>Contact</h2>
+          <p>
+            Have questions, feedback, or suggestions? We would love to hear from you. Reach out at{' '}
+            <a href="mailto:hello@pdftools.one" style={{ color: 'var(--color-brand)' }}>hello@pdftools.one</a>.
           </p>
-        </section>
+        </div>
       </div>
-
-      <AdSlot slot="footer" />
     </div>
   );
 }

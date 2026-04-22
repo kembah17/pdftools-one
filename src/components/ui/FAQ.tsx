@@ -2,38 +2,53 @@
 
 import { useState } from 'react';
 
-export interface FAQItem {
+interface FAQItem {
   question: string;
   answer: string;
 }
 
-interface FAQProps {
-  items: FAQItem[];
-}
-
-export default function FAQ({ items }: FAQProps) {
+export function FAQ({ items }: { items: FAQItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <div className="space-y-3">
       {items.map((item, i) => (
-        <div key={i} className="bg-surface border border-border rounded-lg overflow-hidden shadow-sm">
+        <div
+          key={i}
+          className="rounded-xl overflow-hidden"
+          style={{
+            backgroundColor: 'var(--color-bg-card)',
+            border: '1px solid var(--color-border)',
+          }}
+        >
           <button
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
-            className="w-full flex items-center justify-between p-4 text-left font-medium text-text hover:bg-surface-alt transition-colors"
-            aria-expanded={openIndex === i}
+            className="w-full px-6 py-4 text-left flex items-center justify-between gap-4 cursor-pointer"
+            style={{ color: 'var(--color-text-heading)', backgroundColor: 'transparent', border: 'none' }}
           >
-            <span>{item.question}</span>
+            <span className="font-semibold text-sm md:text-base">{item.question}</span>
             <svg
-              className={`w-5 h-5 text-text-light transition-transform ${openIndex === i ? 'rotate-180' : ''}`}
-              fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              className="shrink-0 transition-transform duration-200"
+              style={{
+                transform: openIndex === i ? 'rotate(180deg)' : 'rotate(0deg)',
+                color: 'var(--color-text-muted)',
+              }}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              <path d="M6 9l6 6 6-6" />
             </svg>
           </button>
           {openIndex === i && (
-            <div className="px-4 pb-4 text-text-light leading-relaxed">
-              {item.answer}
+            <div
+              className="px-6 pb-4 text-sm leading-relaxed"
+              style={{ color: 'var(--color-text-secondary)', borderTop: '1px solid var(--color-border-light)' }}
+            >
+              <div className="pt-3">{item.answer}</div>
             </div>
           )}
         </div>
@@ -41,3 +56,5 @@ export default function FAQ({ items }: FAQProps) {
     </div>
   );
 }
+
+export default FAQ;

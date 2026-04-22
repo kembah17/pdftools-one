@@ -1,14 +1,20 @@
-interface PrivacyBadgeProps {
-  className?: string;
-}
-
-export function PrivacyBadge({ className = '' }: PrivacyBadgeProps) {
+export function PrivacyBadge({ className }: { className?: string }) {
   return (
-    <div className={`inline-flex items-center gap-2 px-4 py-2 bg-surface border border-border rounded-full shadow-sm text-sm text-text-light ${className}`}>
-      <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+    <div
+      className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium ${className || ''}`}
+      style={{
+        backgroundColor: 'var(--color-brand-lightest)',
+        color: 'var(--color-brand)',
+        border: '1px solid var(--color-brand)',
+      }}
+    >
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
       </svg>
-      <span>Files never leave your browser</span>
+      100% Private — Files Never Leave Your Browser
     </div>
   );
 }
+
+export default PrivacyBadge;

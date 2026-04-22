@@ -1,4 +1,2 @@
-"use client";
-
-export type { FAQItem } from "@/components/ui/FAQ";
-export { default as FAQ } from "@/components/ui/FAQ";
+export { FAQ } from '@/components/ui/FAQ';
+export { default } from '@/components/ui/FAQ';

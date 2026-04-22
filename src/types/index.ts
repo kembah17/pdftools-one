@@ -1,5 +1,5 @@
 export interface ProcessingState {
-  status: "idle" | "processing" | "complete" | "error";
+  status: 'idle' | 'processing' | 'complete' | 'error';
   progress: number;
   message?: string;
 }
@@ -17,16 +17,6 @@ export interface PDFFile {
   pages?: number;
 }
 
-export interface ImageFile {
-  id: string;
-  file: File;
-  name: string;
-  size: number;
-  thumbnail: string;
-}
-
-export type ImageQuality = "low" | "medium" | "high";
-
-export type PageSize = "a4" | "letter" | "fit";
-
+export type ImageQuality = 'low' | 'medium' | 'high';
 export type RotationAngle = 0 | 90 | 180 | 270;
+export type PageSize = 'a4' | 'letter' | 'fit';

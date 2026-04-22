@@ -1,14 +1,18 @@
-interface AdSlotProps {
-  slot: string;
-  className?: string;
-}
-
-export function AdSlot({ slot, className = '' }: AdSlotProps) {
+export function AdSlot({ slot }: { slot: string }) {
   return (
-    <div className={`ad-slot my-6 ${className}`} data-ad-slot={slot}>
-      <div className="bg-[var(--ad-bg)] border border-dashed border-[var(--ad-border)] rounded-lg p-4 text-center text-sm text-text-light">
-        Advertisement
-      </div>
+    <div
+      className="my-6 rounded-lg flex items-center justify-center text-sm"
+      style={{
+        backgroundColor: 'var(--color-ad-bg)',
+        border: '1px dashed var(--color-ad-border)',
+        color: 'var(--color-ad-text)',
+        minHeight: '90px',
+        padding: '1rem',
+      }}
+    >
+      <span>Ad Space — {slot}</span>
     </div>
   );
 }
+
+export default AdSlot;

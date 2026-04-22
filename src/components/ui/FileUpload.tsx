@@ -1,89 +1,68 @@
-"use client";
+'use client';
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, type ReactNode } from 'react';
 
 interface FileUploadProps {
   accept?: string;
   multiple?: boolean;
   maxSize?: number;
   onFiles: (files: File[]) => void;
-  children?: React.ReactNode;
+  label?: string;
+  description?: string;
+  children?: ReactNode;
+  className?: string;
 }
 
-export function FileUpload({ accept, multiple = false, maxSize, onFiles, children }: FileUploadProps) {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-
-  const handleFiles = useCallback(
-    (fileList: FileList | null) => {
-      if (!fileList) return;
-      let files = Array.from(fileList);
-      if (accept) {
-        const exts = accept.split(",").map((e) => e.trim().toLowerCase());
-        files = files.filter((f) => {
-          const name = f.name.toLowerCase();
-          const type = f.type.toLowerCase();
-          return exts.some((ext) => {
-            if (ext.startsWith(".")) return name.endsWith(ext);
-            if (ext.includes("/")) {
-              if (ext.endsWith("/*")) return type.startsWith(ext.replace("/*", "/"));
-              return type === ext;
-            }
-            return name.endsWith(ext);
-          });
-        });
-      }
-      if (maxSize) {
-        files = files.filter((f) => f.size <= maxSize);
-      }
-      if (files.length > 0) onFiles(files);
-    },
-    [accept, maxSize, onFiles]
-  );
-
-  const handleDragOver = useCallback((e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragging(true);
-  }, []);
-
-  const handleDragLeave = useCallback((e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragging(false);
-  }, []);
-
+export function FileUpload({ accept = '.pdf', multiple = true, onFiles, label, description, children, className }: FileUploadProps) {
   const handleDrop = useCallback(
     (e: React.DragEvent) => {
       e.preventDefault();
-      e.stopPropagation();
-      setIsDragging(false);
-      handleFiles(e.dataTransfer.files);
+      const files = Array.from(e.dataTransfer.files);
+      if (files.length) onFiles(files);
     },
-    [handleFiles]
+    [onFiles]
+  );
+
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const files = Array.from(e.target.files || []);
+      if (files.length) onFiles(files);
+    },
+    [onFiles]
   );
 
   return (
     <div
-      onClick={() => inputRef.current?.click()}
-      onDragOver={handleDragOver}
-      onDragLeave={handleDragLeave}
       onDrop={handleDrop}
-      className={`relative cursor-pointer rounded-xl border-2 border-dashed p-8 text-center transition-colors ${
-        isDragging
-          ? "border-primary bg-primary-light/50"
-          : "border-border hover:border-primary hover:bg-primary-light/20"
-      }`}
+      onDragOver={(e) => e.preventDefault()}
+      className={`rounded-xl p-8 text-center cursor-pointer transition-all ${className || ''}`}
+      style={{
+        border: '2px dashed var(--color-border)',
+        backgroundColor: 'var(--color-bg-main)',
+      }}
     >
-      <input
-        ref={inputRef}
-        type="file"
-        accept={accept}
-        multiple={multiple}
-        onChange={(e) => handleFiles(e.target.files)}
-        className="hidden"
-      />
-      {children}
+      <label className="cursor-pointer block">
+        <input
+          type="file"
+          accept={accept}
+          multiple={multiple}
+          onChange={handleChange}
+          className="hidden"
+        />
+        {children || (
+          <>
+            <div className="text-4xl mb-3">📄</div>
+            <p className="font-semibold text-base" style={{ color: 'var(--color-text-heading)' }}>
+              {label || 'Drop files here or click to browse'}
+            </p>
+            <p className="text-sm mt-1" style={{ color: 'var(--color-text-muted)' }}>
+              {description || `Accepts ${accept} files`}
+            </p>
+          </>
+        )}
+      </label>
     </div>
   );
 }
+
+export default FileUpload;

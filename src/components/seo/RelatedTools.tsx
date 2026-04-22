@@ -1,2 +1,2 @@
-export { default as RelatedTools } from "@/components/ui/RelatedTools";
-export type { RelatedToolsProps } from "@/components/ui/RelatedTools";
+export { RelatedTools } from '@/components/ui/RelatedTools';
+export { default } from '@/components/ui/RelatedTools';
