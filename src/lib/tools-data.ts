@@ -14,4 +14,5 @@ export const tools: Tool[] = [
   { name: 'JPG to PDF', slug: '/jpg-to-pdf', description: 'Convert JPG images into a PDF document. Supports multiple images with reordering.', icon: '📷', shortDesc: 'Convert images to PDF' },
   { name: 'PDF to Word', slug: '/pdf-to-word', description: 'Convert PDF documents to editable Word (.docx) format with text extraction.', icon: '📝', shortDesc: 'Convert PDF to Word document' },
   { name: 'Rotate PDF', slug: '/rotate-pdf', description: 'Rotate PDF pages to any orientation. Rotate individual pages or all at once.', icon: '🔄', shortDesc: 'Rotate PDF pages' },
+  { name: 'PDF to Text (OCR)', slug: '/pdf-to-text', description: 'Extract text from scanned PDFs using OCR. Includes image preprocessing with contrast, grayscale, noise removal, and deskew for better accuracy.', icon: '🔍', shortDesc: 'Extract text from scanned PDFs' },
 ];
